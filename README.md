@@ -164,3 +164,30 @@ Licensed under the MIT License, Copyright © 2026
 ---
 
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+
+
+这个项目的 pnpm-workspace.yaml 里缺少了必需的 packages 字段。
+
+packages:
+  - '.'
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+另一个关键问题
+你的 Astro 项目当前配置为 output: "static"（静态站点），而 Wrangler 试图将其转换为 Cloudflare Workers 模式。你的 @astrojs/cloudflare 适配器虽然已经在 package.json 的依赖中，但 Astro 配置并未使用它。
+
+解决方案
+根据你的需求选择一种：
+
+方案 A：部署为静态站点（推荐，因为你的项目已经是 static 模式）
+在项目根目录创建或编辑 wrangler.toml，明确配置静态资源目录，阻止 Wrangler 自动配置：
+name = "soravibe-profile"
+compatibility_date = "2026-08-31"
+
+[assets]
+directory = "./dist"
+将部署命令改为跳过自动配置（在 Cloudflare Builds 的 trigger 设置中修改 deploy_command）：
+npx wrangler deploy --no-bundle
+或者直接使用 wrangler versions upload / wrangler deploy 并确保 wrangler.toml 存在，这样 Wrangler 不会尝试运行 astro add cloudflare。 
