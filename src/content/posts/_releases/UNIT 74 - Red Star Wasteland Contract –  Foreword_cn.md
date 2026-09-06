@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-05-17T07:15:45.792Z
-title: A Starry Sky with a Price Tag
+title: 《UNIT 74：红星废土契约》前言
 slug: story000_cn
 featured: true
 tags:

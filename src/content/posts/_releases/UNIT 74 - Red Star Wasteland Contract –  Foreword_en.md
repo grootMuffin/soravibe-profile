@@ -1,8 +1,8 @@
 ---
 pubDatetime: 2026-05-17T07:15:45.792Z
-title: A Starry Sky with a Price Tag
+title: UNIT 74 - Red Star Wasteland Contract –  Foreword
 slug: story000_en
-featured: true
+featured: false
 tags:
   - UNIT 74
 description: "By the end of the 22nd century, humanity had finally stepped out of its cradle."

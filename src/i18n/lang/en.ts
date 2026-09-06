@@ -29,7 +29,7 @@ export default {
   },
   home: {
     socialLinks: "Social Links",
-    featured: "Unit 74 story",
+    featured: "Chinese Posts",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
   },
